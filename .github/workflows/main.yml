@@ -25,7 +25,7 @@ jobs:
           file: 02-kube-news/src/Dockerfile
           push: true
           tags: |
-            dvdspo01/kube-news-maratona:${{ github.run_number }}
+            dvdspo01/kube-news-maratona:v${{ github.run_number }}
             dvdspo01/kube-news-maratona:latest
 
   deploy-to-kubernetes:
@@ -47,4 +47,4 @@ jobs:
           manifests: |
             02-kube-news/k8s/deployment.yaml
           images: |
-            fabriciosveronez/kube-news-maratona:${{ github.run_number }}
+            dvdspo01/kube-news-maratona:v${{ github.run_number }}
