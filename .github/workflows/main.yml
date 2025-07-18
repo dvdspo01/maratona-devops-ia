@@ -55,4 +55,3 @@ jobs:
           images: |
             dvdspo01/kube-news-maratona:v${{ github.run_number }}
           namespace: default
-
