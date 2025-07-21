@@ -64,7 +64,7 @@ spec:
         image: dvdspo01/kube-news-maratona:v1
         requests:
             cpu: "100m"
-            memory: "128Mi"
+            memory: "128Mi" 
         ports:
         - containerPort: 8080
         env:
