@@ -51,6 +51,14 @@ spec:
       labels:
         app: kube-news-app
     spec:
+      topologySpreadConstraints:
+        - maxSkew: 1
+          topologyKey: "kubernetes.io/hostname"
+          whenUnsatisfiable: DoNotSchedule
+          labelSelector:
+            matchLabels:
+              app: kube-news-app
+
       containers:
       - name: kube-news-app
         image: dvdspo01/kube-news-maratona:v1
@@ -82,4 +90,4 @@ spec:
   - port: 80
     targetPort: 8080
   selector:
-    app: kube-news-app
+    app: kube-news-app  
